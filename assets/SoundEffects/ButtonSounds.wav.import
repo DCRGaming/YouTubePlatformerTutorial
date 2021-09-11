@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ButtonSounds.wav-2de5a43c959fa9656348d19f7d47b648.sample"
+
+[deps]
+
+source_file="res://assets/SoundEffects/ButtonSounds.wav"
+dest_files=[ "res://.import/ButtonSounds.wav-2de5a43c959fa9656348d19f7d47b648.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
