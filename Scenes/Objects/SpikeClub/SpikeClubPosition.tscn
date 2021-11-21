@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Objects/SpikeClub/SpikeClub.gd" type="Script" id=1]
+[ext_resource path="res://assets/Objects/spike_club_sheet.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Objects/SpikeClub/SpikeClubPosition.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+height = 26.4484
+
+[node name="SpikeClubPosition" type="Position2D"]
+script = ExtResource( 3 )
+
+[node name="SpikeClub" type="KinematicBody2D" parent="."]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpikeClub"]
+position = Vector2( 0, 23.7117 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeClub"]
+position = Vector2( 0, 23.8109 )
+shape = SubResource( 1 )

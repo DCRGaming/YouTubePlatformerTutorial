@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Objects/SpikePit/SpikePit.gd" type="Script" id=1]
+[ext_resource path="res://assets/Objects/misc_sheet.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.50438, 7.35021 )
+
+[node name="SpikePit" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 12
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0992126, 4.46455 )
+shape = SubResource( 1 )

@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Objects/misc_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Objects/GroundButton/GroundButton.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 24, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Unpressed",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "Pressed",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 0.05
+height = 1.5
+
+[node name="GroundButton" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -12.0497 )
+frames = SubResource( 3 )
+animation = "Unpressed"
+
+[node name="UnpressedCollision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -8, 0, -6, -4, 6, -4, 8, 0 )
+
+[node name="PressedCollision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -8, 0, -6, -3, 6, -3, 8, 0 )
+
+[node name="PressDetector" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PressDetector"]
+position = Vector2( 0, -3.75 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="PressDetector" to="." method="_on_PressDetector_body_entered"]
+[connection signal="body_exited" from="PressDetector" to="." method="_on_PressDetector_body_exited"]

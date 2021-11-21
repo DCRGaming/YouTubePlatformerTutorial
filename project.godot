@@ -8,6 +8,64 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scenes/Enemy/Enemy.gd"
+}, {
+"base": "StaticBody2D",
+"class": "GroundButton",
+"language": "GDScript",
+"path": "res://Scenes/Objects/GroundButton/GroundButton.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scenes/Player/Player.gd"
+}, {
+"base": "State",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://Scenes/Player/PlayerState.gd"
+}, {
+"base": "RigidBody2D",
+"class": "RigidBox",
+"language": "GDScript",
+"path": "res://Scenes/Objects/RigidBox/RigidBox.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "SpikeClub",
+"language": "GDScript",
+"path": "res://Scenes/Objects/SpikeClub/SpikeClub.gd"
+}, {
+"base": "StaticBody2D",
+"class": "SpikePit",
+"language": "GDScript",
+"path": "res://Scenes/Objects/SpikePit/SpikePit.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://Scenes/StateMachine/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Scenes/StateMachine/StateMachine.gd"
+} ]
+_global_script_class_icons={
+"Enemy": "",
+"GroundButton": "",
+"Player": "",
+"PlayerState": "",
+"RigidBox": "",
+"SpikeClub": "",
+"SpikePit": "",
+"State": "",
+"StateMachine": ""
+}
+
 [application]
 
 config/name="YouTubePlatformerTutorial"
@@ -22,6 +80,30 @@ window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[input]
+
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Object"
 
 [physics]
 
