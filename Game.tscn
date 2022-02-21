@@ -9,6 +9,8 @@
 [node name="Game" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+margin_right = 320.0
+margin_bottom = 180.0
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 25.0647, 135.444 )

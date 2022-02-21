@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/UI/SettingsScreen/SettingsScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="SettingsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.219608, 0.243137, 0.376471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.5
+margin_top = -64.5
+margin_right = 75.5
+margin_bottom = 64.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+margin_right = 151.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "Music"
+
+[node name="MusicScrollBar" type="HScrollBar" parent="VBoxContainer"]
+margin_top = 16.0
+margin_right = 151.0
+margin_bottom = 51.0
+size_flags_vertical = 3
+max_value = 20.0
+value = 10.0
+
+[node name="SoundEffects" type="Label" parent="VBoxContainer"]
+margin_top = 55.0
+margin_right = 151.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 1 )
+text = "Sound Effects"
+
+[node name="SoundEffectsScrollBar" type="HScrollBar" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 151.0
+margin_bottom = 107.0
+size_flags_vertical = 3
+max_value = 20.0
+value = 10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 111.0
+margin_right = 151.0
+margin_bottom = 129.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 57.0
+margin_right = 93.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+
+[connection signal="scrolling" from="VBoxContainer/MusicScrollBar" to="." method="_on_MusicScrollBar_scrolling"]
+[connection signal="scrolling" from="VBoxContainer/SoundEffectsScrollBar" to="." method="_on_SoundEffectsScrollBar_scrolling"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_button_up"]

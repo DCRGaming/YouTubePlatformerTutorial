@@ -5,7 +5,8 @@ func enter() -> void:
 	player.num_dashes -= 1
 	player.is_dashing = true
 	player.animation_state.travel("Dash")
-
+	SoundManager.dash_sound.play()
+	
 
 func exit() -> void:
 	pass

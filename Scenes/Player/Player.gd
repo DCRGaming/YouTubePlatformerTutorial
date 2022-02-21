@@ -37,6 +37,7 @@ enum states {
 
 func _ready() -> void:
 	state = states.IDLE
+	get_node("HitboxPosition/Hitbox/CollisionShape2D").disabled = true
 	
 	
 func update_direction(input_direction_x) -> void:
@@ -80,6 +81,10 @@ func has_dashes() -> bool:
 	if num_dashes > 0:
 		return true
 	return false
+
+
+func play_death_sound() -> void:
+	SoundManager.death_sound.play()
 
 
 # handle in future tutorial

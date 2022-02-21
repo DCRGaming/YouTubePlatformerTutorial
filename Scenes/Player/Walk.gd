@@ -54,6 +54,8 @@ func physics_update(delta: float) -> void:
 			elif collider is SpikePit:
 				state_machine.transition_to("Death")
 				return
+			elif collider is Enemy:
+				state_machine.transition_to("Death")
 			elif collider is RigidBox:
 				if player.raycast.is_colliding():
 					if player.raycast.collide_with_bodies:

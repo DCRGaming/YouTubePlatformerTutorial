@@ -14,7 +14,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.71879
-height = 6.65178
+height = 5.29651
 
 [sub_resource type="Animation" id=2]
 resource_name = "Attack"
@@ -111,9 +111,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "play_death_sound"
+}, {
 "args": [  ],
 "method": "restart_level"
 } ]
@@ -325,9 +328,10 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 vframes = 35
-frame = 11
+frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0936451, 0.65551 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -356,7 +360,6 @@ collision_mask = 2
 position = Vector2( 11.5, 0 )
 rotation = 1.5708
 shape = SubResource( 47 )
-disabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Objects/misc_sheet.png" type="Texture" id=1]
+
+[node name="Shrooms" type="Sprite"]
+texture = ExtResource( 1 )
+vframes = 12
+frame = 11

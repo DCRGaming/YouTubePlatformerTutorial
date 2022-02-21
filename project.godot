@@ -72,6 +72,11 @@ config/name="YouTubePlatformerTutorial"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SoundManager="*res://Scenes/Sounds/SoundManager.tscn"
+SceneManager="*res://Scenes/SceneManager/SceneManager.tscn"
+
 [display]
 
 window/size/width=320

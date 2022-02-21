@@ -6,7 +6,7 @@ func enter() -> void:
 
 
 func exit() -> void:
-	pass
+	SoundManager.land_sound.play()
 	
 	
 
