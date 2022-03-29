@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Joystick/Button.gd" type="Script" id=1]
+[ext_resource path="res://assets/JoystickAssets/ButtonArea.png" type="Texture" id=2]
+[ext_resource path="res://assets/JoystickAssets/ButtonNormal.png" type="Texture" id=3]
+[ext_resource path="res://assets/JoystickAssets/ButtonPressed.png" type="Texture" id=4]
+
+[node name="ButtonArea" type="Sprite"]
+position = Vector2( 36, 152 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="TouchScreenButton" parent="."]
+position = Vector2( -8, -8 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+visibility_mode = 1
+script = ExtResource( 1 )

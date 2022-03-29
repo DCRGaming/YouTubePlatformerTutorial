@@ -29,7 +29,19 @@ func physics_update(delta: float) -> void:
 			input_direction_x = 1
 		else:
 			input_direction_x = -1
-			
+
+### Mobile
+	if player.is_mobile_platform():
+		if player.joystick.get_action() == "ui_right":
+			input_direction_x = 1.0
+		elif player.joystick.get_action() == "ui_left":
+			input_direction_x = -1.0
+		else:
+			input_direction_x = 0.0
+			state_machine.transition_to("Idle")
+			return
+### Mobile
+
 	player.update_direction(input_direction_x)
 	player.velocity.x = player.walk_speed * input_direction_x
 	player.apply_gravity(delta)
@@ -41,13 +53,18 @@ func physics_update(delta: float) -> void:
 														player.floor_max_angle, 
 														false)
 
+### Mobile
 	if player.get_slide_count() > 0:
+		var has_box = false
 		for i in player.get_slide_count():
 			var collision = player.get_slide_collision(i)
 			var box = collision.collider
 			if box is RigidBox:
+				has_box = true
 				box.apply_central_impulse(-collision.normal * player.rigid_push)
-			
+		if has_box == false:
+			state_machine.transition_to("Idle")
+### Mobile
 
 	if Input.is_action_just_released("ui_right") or \
 		Input.is_action_just_released("ui_left"):

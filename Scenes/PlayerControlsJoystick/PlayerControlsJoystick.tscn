@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/MobileControls/dash_unpressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/MobileControls/dash_pressed.png" type="Texture" id=2]
+[ext_resource path="res://assets/MobileControls/attack_unpressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/MobileControls/jump_pressed.png" type="Texture" id=4]
+[ext_resource path="res://assets/MobileControls/attack_pressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/MobileControls/jump_unpressed.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Joystick/ButtonArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerControlsJoystick/PlayerControlsJoystick.gd" type="Script" id=8]
+
+[node name="PlayerControlsJoystick" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="ButtonArea" parent="." instance=ExtResource( 7 )]
+position = Vector2( 36, 149.222 )
+
+[node name="Attack" type="TouchScreenButton" parent="."]
+position = Vector2( 265.181, 136.66 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 5 )
+action = "attack"
+visibility_mode = 1
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2( 291.559, 150.41 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 4 )
+action = "jump"
+visibility_mode = 1
+
+[node name="Dash" type="TouchScreenButton" parent="."]
+position = Vector2( 291.278, 123.471 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "dash"
+visibility_mode = 1

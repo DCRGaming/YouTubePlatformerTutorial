@@ -23,7 +23,12 @@ func physics_update(delta: float) -> void:
 		Input.get_action_strength("ui_right") 
 		- Input.get_action_strength("ui_left")
 	)
-	
+
+### Mobile
+	if player.is_mobile_platform():
+		input_direction_x = player.handle_mobile_input(player.joystick.get_action())
+### Mobile
+
 	player.update_direction(input_direction_x)
 	player.velocity.x = player.walk_speed * input_direction_x
 	player.apply_gravity(delta)

@@ -42,13 +42,25 @@ func physics_update(delta: float) -> void:
 			elif collider is SpikePit:
 				state_machine.transition_to("Death")
 				return
-	
-	# handle other transitions
-	if Input.is_action_just_pressed("jump"):
-		state_machine.transition_to("Jump")
+				
+
+### Mobile
+	if player.is_mobile_platform():
+		if player.joystick.get_action() == "ui_right" or \
+			player.joystick.get_action() == "ui_left":
+				state_machine.transition_to("Walk")
+				return
 	elif Input.is_action_pressed("ui_left") or \
 		Input.is_action_pressed("ui_right"):
 		state_machine.transition_to("Walk")
+### Mobile
+
+	# handle other transitions
+	if Input.is_action_just_pressed("jump"):
+		state_machine.transition_to("Jump")
+#	elif Input.is_action_pressed("ui_left") or \
+#		Input.is_action_pressed("ui_right"):
+#		state_machine.transition_to("Walk")
 	elif Input.is_action_just_pressed("attack"):
 		state_machine.transition_to("Attack")
 	elif Input.is_action_just_pressed("dash") and player.has_dashes():

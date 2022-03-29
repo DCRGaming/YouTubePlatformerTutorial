@@ -35,6 +35,28 @@ enum states {
 	DASH
 }
 
+### Mobile Controls
+var button_path: String = "PlayerControlsJoystick/ButtonArea/Button"
+onready var joystick = get_parent().get_parent().get_node(button_path)
+
+
+func is_mobile_platform() -> bool:
+	var os_name = OS.get_name()
+#	os_name = "Android"
+	if os_name == "Android" or os_name == "iOS":
+		return true
+	else:
+		return false
+		
+func handle_mobile_input(action) -> float:
+	if action == "ui_right":
+		return 1.0
+	elif action == "ui_left":
+		return -1.0
+	else:
+		return 0.0
+
+
 func _ready() -> void:
 	state = states.IDLE
 	get_node("HitboxPosition/Hitbox/CollisionShape2D").disabled = true
@@ -89,4 +111,7 @@ func play_death_sound() -> void:
 
 # handle in future tutorial
 func restart_level() -> void:
-	pass
+	var current_level = get_parent().get_parent().name
+	var path = "res://Scenes/Levels/" + current_level + ".tscn"
+	var current_scene = load(path)
+	SceneManager.change_scene(current_scene, "RestartLevelFade")

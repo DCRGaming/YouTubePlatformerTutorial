@@ -29,7 +29,12 @@ func physics_update(delta: float) -> void:
 			input_direction_x = 1
 		else:
 			input_direction_x = -1
-			
+
+### Mobile
+	if player.is_mobile_platform():
+		input_direction_x = player.handle_mobile_input(player.joystick.get_action())
+### Mobile
+
 	player.update_direction(input_direction_x)
 	player.velocity.x = player.walk_speed * input_direction_x
 	player.apply_gravity(delta)
