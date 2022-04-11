@@ -8,8 +8,8 @@ var color_dark = Color(56, 62, 96, 255)
 var color_light = Color(255, 255, 255, 255)
 
 # The opening scene of the game
-onready var LogoScreen = load("res://Scenes/Levels/Level1.tscn")
-#onready var LogoScreen = load("res://Scenes/UI/LogoScreen/LogoScreen.tscn")
+#onready var LogoScreen = load("res://Scenes/Levels/Level5.tscn")
+onready var LogoScreen = load("res://Scenes/UI/LogoScreen/LogoScreen.tscn")
 #onready var LogoScreen = load("res://Parent.tscn")
 #onready var LogoScreen = load("res://Scenes/TestJoyStick/TestJoyStick.tscn")
 

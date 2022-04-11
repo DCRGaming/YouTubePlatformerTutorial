@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/BGElements/Pot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Tiles/TileMap.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/UI/EndingScreen/EndingScreen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Levels/Level2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Objects/RigidBox/RigidBox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/PlayerControlsJoystick/PlayerControlsJoystick.tscn" type="PackedScene" id=11]
 

@@ -1,0 +1,143 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Levels/LevelTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Background/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/FallingSpikes/FallingSpikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Tiles/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Door/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/SpikePit/SpikePit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Objects/Switch/Switch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/StoneGate/StoneGate.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/UI/EndingScreen/EndingScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BGElements/Plants.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/BGElements/Roots.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/BGElements/Shrooms.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/BGElements/Pot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/PlayerControlsJoystick/PlayerControlsJoystick.tscn" type="PackedScene" id=16]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Background" parent="Background" instance=ExtResource( 2 )]
+
+[node name="BGElements" type="Node2D" parent="."]
+
+[node name="Plants" parent="BGElements" instance=ExtResource( 12 )]
+position = Vector2( 102.115, 148.167 )
+
+[node name="Plants2" parent="BGElements" instance=ExtResource( 12 )]
+position = Vector2( 260.961, 148.501 )
+
+[node name="Plants3" parent="BGElements" instance=ExtResource( 12 )]
+position = Vector2( 207.568, 37.0418 )
+
+[node name="Plants4" parent="BGElements" instance=ExtResource( 12 )]
+position = Vector2( 143.495, 37.0418 )
+
+[node name="Roots" parent="BGElements" instance=ExtResource( 13 )]
+position = Vector2( 238.936, 106.12 )
+
+[node name="Roots4" parent="BGElements" instance=ExtResource( 13 )]
+position = Vector2( 260.294, 106.453 )
+
+[node name="Roots5" parent="BGElements" instance=ExtResource( 13 )]
+position = Vector2( 277.98, 105.786 )
+
+[node name="Roots2" parent="BGElements" instance=ExtResource( 13 )]
+position = Vector2( 218.914, 106.12 )
+
+[node name="Roots3" parent="BGElements" instance=ExtResource( 13 )]
+position = Vector2( 30.7013, 122.138 )
+
+[node name="Shrooms" parent="BGElements" instance=ExtResource( 14 )]
+position = Vector2( 59.0667, 36.7081 )
+
+[node name="Shrooms2" parent="BGElements" instance=ExtResource( 14 )]
+position = Vector2( 81.7589, 37.0418 )
+
+[node name="Shrooms3" parent="BGElements" instance=ExtResource( 14 )]
+position = Vector2( 271.64, 36.7081 )
+
+[node name="Shrooms4" parent="BGElements" instance=ExtResource( 14 )]
+position = Vector2( 295.333, 132.149 )
+
+[node name="Pot" parent="BGElements" instance=ExtResource( 15 )]
+position = Vector2( 23.3597, 84.4286 )
+
+[node name="Door" type="Node2D" parent="."]
+
+[node name="Door" parent="Door" instance=ExtResource( 5 )]
+position = Vector2( 160.025, 164.904 )
+next_scene = ExtResource( 11 )
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="SpikePit" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 40.4543, 148.332 )
+
+[node name="SpikePit2" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 278.389, 131.981 )
+
+[node name="FallingSpikes" parent="Objects" instance=ExtResource( 3 )]
+position = Vector2( 57.0283, 83.156 )
+
+[node name="FallingSpikes2" parent="Objects" instance=ExtResource( 3 )]
+position = Vector2( 73.5847, 83.156 )
+
+[node name="FallingSpikes3" parent="Objects" instance=ExtResource( 3 )]
+position = Vector2( 40.7527, 19.1757 )
+
+[node name="RayCast2D" parent="Objects/FallingSpikes3" index="2"]
+cast_to = Vector2( 0, 70 )
+
+[node name="FallingSpikes5" parent="Objects" instance=ExtResource( 3 )]
+position = Vector2( 111.748, 19.1757 )
+
+[node name="RayCast2D" parent="Objects/FallingSpikes5" index="2"]
+cast_to = Vector2( 0, 85 )
+
+[node name="FallingSpikes6" parent="Objects" instance=ExtResource( 3 )]
+position = Vector2( 200.182, 114.95 )
+
+[node name="RayCast2D" parent="Objects/FallingSpikes6" index="2"]
+cast_to = Vector2( 0, 20 )
+
+[node name="Switch" parent="Objects" instance=ExtResource( 9 )]
+position = Vector2( 240.605, 67.7431 )
+
+[node name="StoneGate" parent="Objects/Switch" instance=ExtResource( 10 )]
+position = Vector2( -60.0678, 52.3925 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 174.543, 56.4037 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 239.616, 71.7544 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 217.925, 152.178 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 235.278, 151.845 )
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource( 6 )]
+position = Vector2( 21.7254, 152.078 )
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Tiles" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 131076, -65535, 0, 1, -65534, 0, 131076, -65533, 0, 1, -65532, 0, 131076, -65531, 0, 1, -65530, 0, 1, -65529, 0, 131076, -65528, 0, 1, -65527, 0, 131076, -65526, 0, 131076, -65525, 0, 1, -65524, 0, 131076, -65523, 0, 1, -65522, 0, 1, -65521, 0, 131076, -65520, 0, 1, -65519, 0, 131076, -65518, 0, 131076, -65517, 0, 1, -65516, 0, 2, 65535, 0, 65541, 0, 0, 3, 1, 0, 131073, 2, 0, 131073, 3, 0, 4, 4, 0, 4, 5, 0, 4, 6, 0, 131073, 7, 0, 4, 8, 0, 131073, 9, 0, 131073, 10, 0, 131073, 11, 0, 131073, 12, 0, 131073, 13, 0, 131073, 14, 0, 131073, 15, 0, 4, 16, 0, 131073, 17, 0, 4, 18, 0, 4, 19, 0, 5, 20, 0, 65538, 131071, 0, 65541, 65536, 0, 65538, 65555, 0, 65541, 65556, 0, 65538, 196607, 0, 65536, 131072, 0, 65539, 131091, 0, 65541, 131092, 0, 65538, 262143, 0, 65541, 196608, 0, 65538, 196611, 0, 0, 196612, 0, 1, 196613, 0, 2, 196616, 0, 0, 196617, 0, 2, 196620, 0, 0, 196621, 0, 2, 196624, 0, 0, 196625, 0, 2, 196627, 0, 65536, 196628, 0, 65539, 327679, 0, 65541, 262144, 0, 65539, 262147, 0, 131072, 262148, 0, 131073, 262149, 0, 131074, 262152, 0, 65541, 262153, 0, 131075, 262154, 0, 1, 262155, 0, 1, 262156, 0, 131077, 262157, 0, 65539, 262160, 0, 65541, 262161, 0, 65539, 262163, 0, 65541, 262164, 0, 65538, 393215, 0, 65541, 327680, 0, 65538, 327688, 0, 65541, 327689, 0, 3, 327690, 0, 4, 327691, 0, 4, 327692, 0, 5, 327693, 0, 131075, 327694, 0, 131076, 327695, 0, 131076, 327696, 0, 131077, 327697, 0, 65539, 327699, 0, 65541, 327700, 0, 65538, 458751, 0, 65536, 393216, 0, 131075, 393217, 0, 131076, 393218, 0, 2, 393224, 0, 65541, 393225, 0, 65538, 393228, 0, 131072, 393229, 0, 131073, 393230, 0, 4, 393231, 0, 131073, 393232, 0, 4, 393233, 0, 131074, 393235, 0, 65536, 393236, 0, 65539, 524287, 0, 65541, 458752, 0, 3, 458753, 0, 4, 458754, 0, 131074, 458758, 0, 0, 458759, 0, 1, 458760, 0, 131077, 458761, 0, 65539, 458771, 0, 65536, 458772, 0, 65538, 589823, 0, 65541, 524288, 0, 65538, 524294, 0, 131072, 524295, 0, 5, 524296, 0, 3, 524297, 0, 131074, 524307, 0, 65536, 524308, 0, 65538, 655359, 0, 65541, 589824, 0, 65539, 589831, 0, 65541, 589832, 0, 65538, 589835, 0, 0, 589836, 0, 2, 589841, 0, 0, 589842, 0, 1, 589843, 0, 131077, 589844, 0, 65539, 720895, 0, 65541, 655360, 0, 131075, 655361, 0, 131076, 655362, 0, 131076, 655363, 0, 1, 655364, 0, 1, 655365, 0, 131076, 655366, 0, 1, 655367, 0, 131077, 655368, 0, 65539, 655371, 0, 65536, 655372, 0, 131075, 655373, 0, 131076, 655374, 0, 1, 655375, 0, 1, 655376, 0, 1, 655377, 0, 131077, 655378, 0, 65537, 655379, 0, 65537, 655380, 0, 65538, 786431, 0, 131072, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 4, 720899, 0, 131073, 720900, 0, 4, 720901, 0, 4, 720902, 0, 131073, 720903, 0, 4, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 131073, 720909, 0, 4, 720910, 0, 131073, 720911, 0, 4, 720912, 0, 131073, 720913, 0, 4, 720914, 0, 4, 720915, 0, 131073, 720916, 0, 131074 )
+
+[node name="PlayerControlsJoystick" parent="." instance=ExtResource( 16 )]
+
+[editable path="Objects/FallingSpikes3"]
+[editable path="Objects/FallingSpikes5"]
+[editable path="Objects/FallingSpikes6"]
